@@ -1,5 +1,4 @@
 FROM openjdk:11
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
+COPY build/libs/jb-hello-world-0.1.0.jar /myapp/
+WORKDIR /myapp
+CMD ["java", "-jar", "/myapp/jb-hello-world-0.1.0.jar"]
