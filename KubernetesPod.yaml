@@ -1,0 +1,27 @@
+metadata:
+  labels:
+    some-label: some-label-value
+spec:
+  containers:
+  - name: jnlp
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: jnlp
+  - name: gradle
+    image: gradle:7-jdk
+    command:
+    - sleep
+    args:
+    - 99d
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: maven
+  - name: docker
+    image: docker:19.03.1-dind
+    command:
+    - sleep
+    args:
+    - 99d
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: busybox

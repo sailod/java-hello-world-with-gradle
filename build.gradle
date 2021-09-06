@@ -37,6 +37,7 @@ mainClassName = 'hello.HelloWorld'
 // tag::repositories[]
 repositories {
     mavenCentral()
+    jcenter()
 }
 // end::repositories[]
 
@@ -54,6 +55,7 @@ targetCompatibility = 1.7
 dependencies {
     compile "joda-time:joda-time:2.2"
     testCompile "junit:junit:4.12"
+    classpath 'com.bmuschko:gradle-docker-plugin:2.2'
 }
 // end::dependencies[]
 
