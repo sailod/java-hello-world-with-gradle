@@ -16,8 +16,8 @@ pipeline {
         container('docker') {
           sh 'echo BUSYBOX_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
           sh 'ls'
-          sh 'docker build -t test .'
-          sh 'docker push test'
+          sh 'docker build -t docker-registry-1630870070:5000/gradle-hello-world .'
+          sh 'docker push docker-registry-1630870070:5000/gradle-hello-world'
         }
       }
     }
