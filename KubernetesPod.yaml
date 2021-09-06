@@ -32,6 +32,3 @@ spec:
     - sleep
     args:
     - 99d
-    env:
-    - name: CONTAINER_ENV_VAR
-      value: maven

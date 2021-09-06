@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello-gradle
+spec:
+  template:
+    spec:
+      containers:
+      - name: hello-world
+        image: docker-registry-1630870070.default:30000/gradle-hello-world:v1
+      restartPolicy: Never
+  backoffLimit: 4
