@@ -1,4 +1,4 @@
-FROM openjdk:11
-COPY build/libs/jb-hello-world-0.1.0.jar /myapp/
+FROM openjdk:8
+COPY build/install/HelloWorld /myapp/
 WORKDIR /myapp
-CMD ["java", "-jar", "/myapp/jb-hello-world-0.1.0.jar"]
+CMD ["/HelloWorld/bin/HelloWorld"]

@@ -39,13 +39,17 @@ repositories {
     mavenCentral()
 }
 // end::repositories[]
-
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+}
 // tag::jar[]
 jar {
     baseName = 'jb-hello-world'
     version =  '0.1.0'
     manifest {
         attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                 'Main-Class': 'hello.HelloWorld'
         )
     }
@@ -56,10 +60,7 @@ jar {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
-dependencies {
-    compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
-}
+
 // end::dependencies[]
 
 // tag::wrapper[]
